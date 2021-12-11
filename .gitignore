@@ -1,2 +1,4 @@
-node_modules/
-.env/
+##dependencias
+/node_modules
+##rutas
+/.env
