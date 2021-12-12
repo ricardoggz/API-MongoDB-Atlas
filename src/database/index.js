@@ -6,7 +6,7 @@ let connection = null;
 module.exports.Database = (collection) =>
   new Promise(async (resolve, reject) => {
     try {
-      if (connection) {
+      if (!connection) {
         const client = new MongoClient(Config.mongoUri);
         connection = await client.connect();
         debug("nueva conexion realizada");
