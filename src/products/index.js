@@ -6,7 +6,7 @@ const { ProductsController } = require("./controller");
 module.exports.ProductAPI = (app) => {
   router
     .get("/", ProductsController.getProducts)
-    .get("id:", ProductsController.getProduct)
+    .get("/:id", ProductsController.getProduct)
     .post("/", ProductsController.createProduct);
 
   app.use("/api/products", router);
