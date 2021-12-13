@@ -9,5 +9,5 @@ module.exports.ProductAPI = (app) => {
     .get("id:", ProductsControler.getProduct)
     .post("/", ProductsControler.createProduct);
 
-  app.use("api/products", router);
+  app.use("/api/products", router);
 };

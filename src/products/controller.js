@@ -8,7 +8,7 @@ module.exports.ProductsControler = {
       res.json(products);
     } catch (error) {
       debug("error");
-      res.status(500).json({ messageError: "Error" });
+      res.status(500).json({ messageError: "Internal sevrer Error" });
     }
   },
   getProduct: async (req, res) => {
@@ -16,7 +16,7 @@ module.exports.ProductsControler = {
       const {
         params: { id },
       } = req;
-      let product = await ProductsServices.getById();
+      let product = await ProductsServices.getById(id);
       res.json(product);
     } catch (error) {
       debug("error");
