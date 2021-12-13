@@ -1,7 +1,7 @@
 const debug = require("debug")("app:module-products-controller");
 const { ProductsServices } = require("./services");
 
-module.exports.ProductsControler = {
+module.exports.ProductsController = {
   getProducts: async (req, res) => {
     try {
       let products = await ProductsServices.getAll();
@@ -26,8 +26,8 @@ module.exports.ProductsControler = {
   createProduct: async (req, res) => {
     try {
       const { body } = req;
-      const insertedID = await ProductsServices.create(body);
-      res.json(insertedID);
+      const insertedId = await ProductsServices.create(body);
+      res.json(insertedId);
     } catch (error) {
       debug("error");
       res.status(500).json({ messageError: "Error" });

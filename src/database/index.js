@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
-const debug = require("debug")("app:database");
-const {Config} =require('../config/index');
-let connection = null;
+const debug = require("debug")("app:module-database");
+const { Config } = require("../config/index");
+var connection = null;
 
 module.exports.Database = (collection) =>
   new Promise(async (resolve, reject) => {
@@ -9,7 +9,7 @@ module.exports.Database = (collection) =>
       if (!connection) {
         const client = new MongoClient(Config.mongoUri);
         connection = await client.connect();
-        debug("nueva conexion realizada");
+        debug("nueva conexion realizada a Mongo Atlas");
       }
 
       debug("reutilizando conexion");

@@ -1,8 +1,9 @@
 //modulo de base de datos
+const { ObjectId } = require("mongodb");
 
 const { Database } = require("../database/index");
-const { ObjectId } = require("mongodb");
-const COLLECTION = "inventario";
+
+const COLLECTION = "products";
 
 //const para traer todos los datos de la bd
 const getAll = async () => {
